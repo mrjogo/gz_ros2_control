@@ -279,7 +279,8 @@ bool IgnitionSystem::initSim(
         "Joint '" << joint_name << "'is mimicking joint '" << mimicked_joint << "' with mutiplier: "
                   << mimic_joint.multiplier);
       this->dataPtr->mimic_joints_.push_back(mimic_joint);
-      suffix = "_mimic";
+      // See https://github.com/ros-controls/gz_ros2_control/issues/96
+      // suffix = "_mimic";
     }
 
     RCLCPP_INFO_STREAM(this->nh_->get_logger(), "\tState:");
